@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Popover, Transition } from "@headlessui/react";
+import { Popover } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { menuItems } from "@utils/lists";
 import NavbarDialog from "./NavbarDialog";

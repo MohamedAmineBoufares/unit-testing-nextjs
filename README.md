@@ -21,6 +21,7 @@ The project is created with:
 - [pnpm](https://pnpm.io/installation#using-npm): 8.6.12
 - Next.js: 13.4.19
 - Taliwind CSS: 3.3.3
+- Zustand: 4.4.1
 - Jest: 29.6.2
 - React Testing Library: 14.0.0
 

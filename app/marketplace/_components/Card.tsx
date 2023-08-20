@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { HeartIcon } from "@heroicons/react/20/solid";
+
 import { useStore } from "@store/index";
 
 type Props = {
@@ -20,8 +20,15 @@ function Card({ price, src, title, keywords }: Props) {
   const { add, favs } = useStore((state) => state);
 
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg text-left">
-      <button data-testid="card" onClick={toggleShowPrice}>
+    <div
+      className="max-w-sm rounded overflow-hidden shadow-lg text-left"
+      data-testid="card"
+    >
+      <button
+        data-testid="img-btn"
+        className="w-full"
+        onClick={toggleShowPrice}
+      >
         <Image
           width={500}
           height={100}
@@ -41,13 +48,17 @@ function Card({ price, src, title, keywords }: Props) {
       )}
 
       <div className="px-6 py-4 text-white h-25">
-        <span className="flex justify-between items-center">
-          <div className="font-bold text-xl mb-2">{title}</div>
+        <span className="flex justify-between items-center mb-2">
+          <p className="font-bold text-xl">{title}</p>
 
-          <button onClick={() => add(title)}>
-            <HeartIcon
-              className={`h-6 w-6 ${favs.includes(title) && "fill-yellow-300"}`}
-            />
+          <button
+            data-testid={`fav-btn-${title}`}
+            onClick={() => add(title)}
+            className={`bg-white text-black rounded-sm p-1 px-2 hover:bg-yellow-300 duration-300 ${
+              favs.includes(title) && "bg-yellow-300"
+            }`}
+          >
+            <p className="text-sm">Add to favs</p>
           </button>
         </span>
         <p className="text-base">
