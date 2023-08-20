@@ -47,6 +47,14 @@ pnpm dev
 pnpm test
 ```
 
+4. Run unit tests with coverage:
+
+```bash
+pnpm test:coverage
+```
+
+**Note:** The coverage report is generated in the `coverage` folder.
+
 ## Licence
 
 [MIT licensed](./LICENCE).
