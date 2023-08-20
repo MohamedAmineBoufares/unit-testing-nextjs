@@ -16,6 +16,8 @@ const config = {
     "^@utils/(.*)$": "<rootDir>/utils/$1",
     "^@store/(.*)$": "<rootDir>/store/$1",
   },
+  collectCoverage: true,
+  coverageReporters: ["json", "html"],
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
