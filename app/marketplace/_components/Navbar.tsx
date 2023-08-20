@@ -6,9 +6,18 @@ import { Bars3Icon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { callsToAction, menuItems, products } from "@utils/lists";
 import NavbarDialog from "./NavbarDialog";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const renderColor = (path: string) => {
+    return pathname.includes(path)
+      ? "text-yellow-300 hover:text-white"
+      : "text-white hover:text-yellow-300";
+  };
 
   return (
     <header className="bg-zinc-900 fixed top-0 w-screen">
@@ -30,14 +39,16 @@ export default function Navbar() {
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          {menuItems.map(({ name }) => (
-            <a
+          {menuItems.map(({ name, path }) => (
+            <Link
+              href={path}
               key={name}
-              href="#"
-              className="text-sm font-semibold leading-6 text-white hover:text-yellow-300 duration-300"
+              className={`text-sm font-semibold leading-6 ${renderColor(
+                path
+              )} duration-300`}
             >
               {name}
-            </a>
+            </Link>
           ))}
 
           <Popover className="relative">
@@ -105,12 +116,13 @@ export default function Navbar() {
         </Popover.Group>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a
-            href="#"
+          <Link
+            href="/"
             className="text-sm font-semibold leading-6 text-white hover:text-yellow-300 duration-300"
+            replace
           >
-            Log in &rarr;
-          </a>
+            Sign in &rarr;
+          </Link>
         </div>
       </nav>
 

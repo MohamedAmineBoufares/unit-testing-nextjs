@@ -1,7 +1,7 @@
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
-import Card from "@components/Card";
+import Card from "../app/marketplace/_components/Card";
 import { describe } from "node:test";
 
 const item = {

@@ -1,12 +1,19 @@
-import Card from "@components/Card";
-import { cards } from "@utils/lists";
+import SignInForm from "./SignInForm";
 
-export default function Home() {
+function SignIn() {
   return (
-    <main className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 place-items-start">
-      {cards.map((card, idx) => (
-        <Card key={idx} {...card} />
-      ))}
-    </main>
+    <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+        <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">
+          Sign in to your account
+        </h2>
+      </div>
+
+      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <SignInForm />
+      </div>
+    </div>
   );
 }
+
+export default SignIn;
