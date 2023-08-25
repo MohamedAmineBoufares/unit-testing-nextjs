@@ -22,6 +22,7 @@ export default function Navbar() {
   return (
     <header className="bg-zinc-900 fixed top-0 w-screen">
       <nav
+        data-cy="navbar"
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
       >
@@ -41,6 +42,7 @@ export default function Navbar() {
         <Popover.Group className="hidden lg:flex lg:gap-x-12 items-center">
           {menuItems.map(({ name, path }) => (
             <Link
+              data-cy={`navbar-link-${name}`}
               href={path}
               key={name}
               className={`text-sm font-semibold leading-6 ${renderColor(
@@ -56,11 +58,12 @@ export default function Navbar() {
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link
-            href="/"
+            data-cy="navbar-link-sign-out"
+            href="/bye"
             className="text-sm font-semibold leading-6 text-white hover:text-yellow-300 duration-300"
             replace
           >
-            Sign in &rarr;
+            Sign out &rarr;
           </Link>
         </div>
       </nav>

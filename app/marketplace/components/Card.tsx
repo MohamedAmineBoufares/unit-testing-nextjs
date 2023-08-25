@@ -21,10 +21,11 @@ function Card({ price, src, title, keywords }: Props) {
 
   return (
     <div
-      className="max-w-sm rounded overflow-hidden shadow-lg text-left"
+      className="max-w-sm rounded overflow-hidden shadow-lg text-lef"
       data-testid="card"
     >
       <button
+        data-cy={`img-btn-${title}`}
         data-testid="img-btn"
         className="w-full"
         onClick={toggleShowPrice}
@@ -40,8 +41,9 @@ function Card({ price, src, title, keywords }: Props) {
 
       {showPrice && (
         <div
-          className="px-6 py-4 text-yellow-300"
+          data-cy={`price-container-${title}`}
           data-testid="price-container"
+          className="px-6 py-4 text-yellow-300"
         >
           <div className="font-bold text-xl">{price}</div>
         </div>
@@ -52,6 +54,7 @@ function Card({ price, src, title, keywords }: Props) {
           <p className="font-bold text-xl">{title}</p>
 
           <button
+            data-cy={`fav-btn-${title}`}
             data-testid={`fav-btn-${title}`}
             onClick={() => add(title)}
             className={`bg-white text-black rounded-sm p-1 px-2 hover:bg-yellow-300 duration-300 ${
