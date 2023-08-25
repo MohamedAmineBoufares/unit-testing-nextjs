@@ -24,6 +24,7 @@ The project is created with:
 - Zustand: 4.4.1
 - Jest: 29.6.2
 - React Testing Library: 14.0.0
+- Cypress: 12.17.4
 
 ## Setup
 
