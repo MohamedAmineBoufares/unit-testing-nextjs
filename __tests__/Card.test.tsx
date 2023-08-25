@@ -1,7 +1,7 @@
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
-import Card from "../app/marketplace/_components/Card";
+import Card from "../app/marketplace/components/Card";
 
 const item = {
   src: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
@@ -31,7 +31,7 @@ describe("Card", () => {
     const user = userEvent.setup();
 
     it("Checks that the price is not visible initially", () => {
-      // query by dosen't throw an error if the element is not found
+      // queryBy dosen't throw an error if the element is not found
       const price = screen.queryByTestId("price-container");
 
       expect(price).not.toBeInTheDocument();
@@ -42,7 +42,6 @@ describe("Card", () => {
 
       await user.click(card);
 
-      // query by dosen't throw an error if the element is not found
       const price = screen.queryByTestId("price-container");
 
       expect(price).toBeInTheDocument();
@@ -53,7 +52,6 @@ describe("Card", () => {
 
       await user.click(card);
 
-      // query by dosen't throw an error if the element is not found
       const price = screen.queryByTestId("price-container");
 
       expect(price).toBeInTheDocument();

@@ -1,10 +1,10 @@
-import { render, screen, within } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 import { cards } from "@utils/lists";
 
 import Home from "../app/marketplace/page";
-import Badge from "../app/marketplace/_components/Badge";
+import Badge from "../app/marketplace/components/Badge";
 
 beforeEach(() =>
   render(

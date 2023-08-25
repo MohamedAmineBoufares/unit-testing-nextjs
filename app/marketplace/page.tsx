@@ -1,4 +1,4 @@
-import Card from "./_components/Card";
+import Card from "./components/Card";
 import { cards } from "@utils/lists";
 
 export default function Home() {

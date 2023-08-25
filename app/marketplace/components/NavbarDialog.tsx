@@ -1,9 +1,7 @@
-"use client";
-
 import { Dialog, Disclosure } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { callsToAction, products } from "@utils/lists";
+
 import { classNames } from "@utils/functions";
 
 type Props = {
@@ -49,18 +47,6 @@ function NavbarDialog({ mobileMenuOpen, setMobileMenuOpen }: Props) {
                         aria-hidden="true"
                       />
                     </Disclosure.Button>
-                    <Disclosure.Panel className="mt-2 space-y-2">
-                      {[...products, ...callsToAction].map((item) => (
-                        <Disclosure.Button
-                          key={item.name}
-                          as="a"
-                          href={item.href}
-                          className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                        >
-                          {item.name}
-                        </Disclosure.Button>
-                      ))}
-                    </Disclosure.Panel>
                   </>
                 )}
               </Disclosure>
