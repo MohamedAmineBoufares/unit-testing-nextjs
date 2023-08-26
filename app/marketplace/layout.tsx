@@ -20,7 +20,7 @@ export default function MarketplaceLayout({
       <Navbar />
 
       <body
-        className={`${inter.className} bg-zinc-900 mt-32 px-2 xl:px-96 mb-5`}
+        className={`${inter.className} bg-zinc-900 mt-32 px-2 md:px-72 2xl:px-96 mb-5`}
       >
         {children}
       </body>
