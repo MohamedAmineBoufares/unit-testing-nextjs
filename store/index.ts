@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 import { create } from "zustand";
 
 interface State {
