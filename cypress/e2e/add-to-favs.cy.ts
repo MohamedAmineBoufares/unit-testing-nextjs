@@ -1,14 +1,15 @@
 describe("Add to favs", () => {
   beforeEach(() => {
     // run these tests as if in a desktop
-    // browser with a 720p monitor
+    // browser with a 1080p monitor
     cy.viewport(1920, 1080);
+
+    // Start from the index page
+    cy.visit("http://localhost:3000");
   });
 
   it("Add 2 items to favs", () => {
-    // Start from the index page
-    cy.visit("http://localhost:3000");
-
+    // login
     cy.get('[data-cy="email-input"]').type("john.doe@email.com");
     cy.get('[data-cy="password-input"]').type("Some$trongp@ssword1");
 
@@ -40,6 +41,8 @@ describe("Add to favs", () => {
     cy.get('[data-cy="fav-btn-Headphones"]').click();
     cy.get('[data-cy="fav-btn-Sneakers"]').click();
     cy.get('[data-cy="fav-btn-Playstation 5"]').click();
+
+    // Check if the favs badge contains 3 items
     cy.get('[data-cy="favs-count"]').contains("3");
 
     // Removes the Sneakers from favs

@@ -54,6 +54,12 @@ pnpm test
 pnpm test:coverage
 ```
 
+5. Run E2E tests using Cypress:
+
+```bash
+pnpm test:e2e
+```
+
 **Note:** The coverage report is generated in the `coverage` folder.
 
 ## Licence
